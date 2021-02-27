@@ -1,0 +1,409 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace l4t38
+{
+    /*
+     * В классе Program создайте публичный статический метод GetIntAsString(), который принимает 1 целое число и возвращает строку:
+     * 1) Если число от 1 до 9999 включительно – словесную форму полученного числа (Например: один (1), пятнадцать(15), одна тысяча девятьсот девяносто девять (1999))
+     * 2) Если меньше 1 - "Слишком маленькое число".
+     * 3) Если больше 9999 - "Слишком большое число".
+     */
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            
+        }
+        /* Добавьте свой код ниже */
+        public static string GetIntAsString(int num)
+        {
+            int a;
+            int i = 0;
+            string full = $"({num})";
+            if (num < 1)
+            {
+                full = "Слишком маленькое число";
+                return full;
+            }
+            if (num > 9999)
+            {
+                full = "Слишком большое число";
+                return full;
+            }
+            if (num > 0 && num < 10000)
+            {
+                if (num >= 100)
+                {
+                    a = num % 100;
+                    if (a <= 20)
+                    {
+                        i++;
+                        switch (a)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 1:
+                                full = "один " + full;
+                                break;
+                            case 2:
+                                full = "два " + full;
+                                break;
+                            case 3:
+                                full = "три " + full;
+                                break;
+                            case 4:
+                                full = "четыре " + full;
+                                break;
+                            case 5:
+                                full = "пять " + full;
+                                break;
+                            case 6:
+                                full = "шесть " + full;
+                                break;
+                            case 7:
+                                full = "семь " + full;
+                                break;
+                            case 8:
+                                full = "восемь " + full;
+                                break;
+                            case 9:
+                                full = "девять " + full;
+                                break;
+                            case 10:
+                                full = "десять " + full;
+                                break;
+                            case 11:
+                                full = "одиннадцать " + full;
+                                break;
+                            case 12:
+                                full = "двенадцать " + full;
+                                break;
+                            case 13:
+                                full = "тринадцать " + full;
+                                break;
+                            case 14:
+                                full = "четырнадцать " + full;
+                                break;
+                            case 15:
+                                full = "пятнадцать " + full;
+                                break;
+                            case 16:
+                                full = "шестнадцать " + full;
+                                break;
+                            case 17:
+                                full = "семнадцать " + full;
+                                break;
+                            case 18:
+                                full = "восемнадцать " + full;
+                                break;
+                            case 19:
+                                full = "девятнадцать " + full;
+                                break;
+                            case 20:
+                                full = "двадцать " + full;
+                                break;
+
+                        }
+                    }
+                    else
+                    {
+                        a = num % 10;
+                        switch (a)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 1:
+                                full = "один " + full;
+                                break;
+                            case 2:
+                                full = "два " + full;
+                                break;
+                            case 3:
+                                full = "три " + full;
+                                break;
+                            case 4:
+                                full = "четыре " + full;
+                                break;
+                            case 5:
+                                full = "пять " + full;
+                                break;
+                            case 6:
+                                full = "шесть " + full;
+                                break;
+                            case 7:
+                                full = "семь " + full;
+                                break;
+                            case 8:
+                                full = "восемь " + full;
+                                break;
+                            case 9:
+                                full = "девять " + full;
+                                break;
+                        }
+                        num /= 10;
+                        a = num % 10;
+                        switch (a)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 2:
+                                full = "двадцать " + full;
+                                break;
+                            case 3:
+                                full = "тридцать " + full;
+                                break;
+                            case 4:
+                                full = "сорок " + full;
+                                break;
+                            case 5:
+                                full = "пятьдесят " + full;
+                                break;
+                            case 6:
+                                full = "шестьдесят " + full;
+                                break;
+                            case 7:
+                                full = "семьдесят " + full;
+                                break;
+                            case 8:
+                                full = "восемьдесят " + full;
+                                break;
+                            case 9:
+                                full = "девяносто " + full;
+                                break;
+                        }
+
+                    }
+                    num /= 10;
+                    if (i == 1)
+                        num /= 10;
+                    if (num != 0)
+                    {
+                        a = num % 10;
+                        switch (a)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 1:
+                                full = "сто " + full;
+                                break;
+                            case 2:
+                                full = "двести " + full;
+                                break;
+                            case 3:
+                                full = "триста " + full;
+                                break;
+                            case 4:
+                                full = "четыреста " + full;
+                                break;
+                            case 5:
+                                full = "пятьсот " + full;
+                                break;
+                            case 6:
+                                full = "шестьсот " + full;
+                                break;
+                            case 7:
+                                full = "семьсот " + full;
+                                break;
+                            case 8:
+                                full = "восемьсот " + full;
+                                break;
+                            case 9:
+                                full = "девятьсот " + full;
+                                break;
+                        }
+                        num /= 10;
+                        if (num != 0)
+                        {
+                            a = num % 10;
+                            switch (a)
+                            {
+                                case 0:
+                                    full = "" + full;
+                                    break;
+                                case 1:
+                                    full = "одна тысяча " + full;
+                                    break;
+                                case 2:
+                                    full = "две тысячи " + full;
+                                    break;
+                                case 3:
+                                    full = "три тысячи " + full;
+                                    break;
+                                case 4:
+                                    full = "четыре тысячи " + full;
+                                    break;
+                                case 5:
+                                    full = "пять тысяч " + full;
+                                    break;
+                                case 6:
+                                    full = "шесть тысяч " + full;
+                                    break;
+                                case 7:
+                                    full = "семь тысяч " + full;
+                                    break;
+                                case 8:
+                                    full = "восемь тысяч " + full;
+                                    break;
+                                case 9:
+                                    full = "девять тысяч " + full;
+                                    break;
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if (num > 0 && num <= 20)
+                    {
+                        switch (num)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 1:
+                                full = "один " + full;
+                                break;
+                            case 2:
+                                full = "два " + full;
+                                break;
+                            case 3:
+                                full = "три " + full;
+                                break;
+                            case 4:
+                                full = "четыре " + full;
+                                break;
+                            case 5:
+                                full = "пять " + full;
+                                break;
+                            case 6:
+                                full = "шесть " + full;
+                                break;
+                            case 7:
+                                full = "семь " + full;
+                                break;
+                            case 8:
+                                full = "восемь " + full;
+                                break;
+                            case 9:
+                                full = "девять " + full;
+                                break;
+                            case 10:
+                                full = "десять " + full;
+                                break;
+                            case 11:
+                                full = "одиннадцать" + full;
+                                break;
+                            case 12:
+                                full = "двенадцать " + full;
+                                break;
+                            case 13:
+                                full = "тринадцать " + full;
+                                break;
+                            case 14:
+                                full = "четырнадцать " + full;
+                                break;
+                            case 15:
+                                full = "пятнадцать" + full;
+                                break;
+                            case 16:
+                                full = "шестнадцать " + full;
+                                break;
+                            case 17:
+                                full = "семнадцать " + full;
+                                break;
+                            case 18:
+                                full = "восемнадцать " + full;
+                                break;
+                            case 19:
+                                full = "девятнадцать " + full;
+                                break;
+                            case 20:
+                                full = "двадцать " + full;
+                                break;
+
+                        }
+                    }
+                    if (num > 20)
+                    {
+                        a = num % 10;
+                        switch (a)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 1:
+                                full = "один " + full;
+                                break;
+                            case 2:
+                                full = "два " + full;
+                                break;
+                            case 3:
+                                full = "три " + full;
+                                break;
+                            case 4:
+                                full = "четыре " + full;
+                                break;
+                            case 5:
+                                full = "пять " + full;
+                                break;
+                            case 6:
+                                full = "шесть " + full;
+                                break;
+                            case 7:
+                                full = "семь " + full;
+                                break;
+                            case 8:
+                                full = "восемь " + full;
+                                break;
+                            case 9:
+                                full = "девять " + full;
+                                break;
+                        }
+                        num /= 10;
+                        a = num % 10;
+                        switch (a)
+                        {
+                            case 0:
+                                full = "" + full;
+                                break;
+                            case 2:
+                                full = "двадцать " + full;
+                                break;
+                            case 3:
+                                full = "тридцать " + full;
+                                break;
+                            case 4:
+                                full = "сорок " + full;
+                                break;
+                            case 5:
+                                full = "пятьдесят " + full;
+                                break;
+                            case 6:
+                                full = "шестьдесят " + full;
+                                break;
+                            case 7:
+                                full = "семьдесят " + full;
+                                break;
+                            case 8:
+                                full = "восемьдесят " + full;
+                                break;
+                            case 9:
+                                full = "девяносто " + full;
+                                break;
+                        }
+                    }
+                }
+            }
+            return full;
+        }
+    }
+}
